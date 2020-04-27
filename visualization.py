@@ -119,22 +119,32 @@ def averages():
     fig.show()
 
 
-if __name__ == "__main__":
-    connection = sqlite3.connect("final.sqlite")
-    cursor = connection.cursor()
-    query = "SELECT School FROM Basic_Info"
-    result = cursor.execute(query).fetchall()
-    connection.close()
-    count = 0
-    print("\n")
-    print("The following is a list of Omaha Public Schools")
+def prints():
     print("___________________________________________________________________________","\n")
-    for schools in result:
-        count += 1
-        print(count,''.join(schools), "\n")
+    print('What would you like to do?',"\n")
+    print('1) Examine the number of types of schools')
+    print('2) Examine the rating counts')
+    print('3) Examine score averages for each performance category')
+    print('4) Return to Main Menu')
+    print('5) Quit Program')
     
+
+
+if __name__ == "__main__":
     
     while True:
+        connection = sqlite3.connect("final.sqlite")
+        cursor = connection.cursor()
+        query = "SELECT School FROM Basic_Info"
+        result = cursor.execute(query).fetchall()
+        connection.close()
+        count = 0
+        print("\n")
+        print("The following is a list of Omaha Public Schools")
+        print("___________________________________________________________________________","\n")
+        for schools in result:
+            count += 1
+            print(count,''.join(schools), "\n")
         print("___________________________________________________________________________")
         prompt_one = input("Enter a Number to Learn More About an Omaha Public School, enter 'summary' for more options, or enter 'exit' to quit: ")
         print("___________________________________________________________________________","\n")
@@ -143,7 +153,7 @@ if __name__ == "__main__":
         else:
             if prompt_one.isnumeric():
                 if int(prompt_one) > 84:
-                    print("1) Invalid input. Enter a valid number or 'summary'.")
+                    print("Invalid input. Enter a valid number or 'summary'.")
                 elif int(prompt_one) <= 0:
                     print("Sorry that number is out of range, try again")
                 elif 0 < int(prompt_one) <= 84:
@@ -164,22 +174,20 @@ if __name__ == "__main__":
                     continue
             elif prompt_one.lower().isalpha():
                 if prompt_one.lower() == 'summary':
-                    print('What would you like to do?',"\n")
-                    print('1) Examine the number of types of schools')
-                    print('2) Examine the rating counts')
-                    print('3) Examine score averages for each performance category')
-                    print('4) Go to Main Menu')
-                    print('5) Quit Program')
+                    prints()                    
                     while True:
                         print("___________________________________________________________________________")
                         prompt_three = input("Enter a number to select a summary option about Omaha Public Schools: ")
                         if prompt_three.isnumeric():
                             if int(prompt_three) == 1:
                                 levels()
+                                prints()
                             elif int(prompt_three) == 2:
                                 rankings()
+                                prints()
                             elif int(prompt_three) == 3:
                                 averages()
+                                prints()
                             elif int(prompt_three) == 4:
                                 break
                             elif int(prompt_three) == 5:
@@ -190,6 +198,6 @@ if __name__ == "__main__":
                             print('Invalid input, enter a valid number.')
 
                 else:
-                    print("2) Invalid input. Enter a valid number or 'summary'.")
+                    print("Invalid input. Enter a valid number or 'summary'.")
             else:
-                print("3) Invalid input. Enter a valid number or 'summary'.")
+                print("Invalid input. Enter a valid number or 'summary'.")
