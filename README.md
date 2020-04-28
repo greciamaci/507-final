@@ -9,3 +9,5 @@ You can also just download all of the files into one directory and run the visua
 
 Instructions will be provided and the user will be prompted to enter information to learn more about how Omaha Public Schools fare 
 through performance scores given by the Nebraska Department of Education. Users will be provided graph summaries about school performance for all schools and/or the school of their choice. 
+
+The packages used in this project include BeautifulSoup, csv, sqlite3, pandas, requests, and Plotly. 
