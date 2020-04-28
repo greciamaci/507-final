@@ -5,4 +5,4 @@ To run this program, download the latest version of python, save this py file, a
 Instructions will be provided and the user will be prompted to enter information to learn more about how Omaha Public Schools fare 
 through performance scores given by the Nebraska Department of Education. 
 
-Users will be provided school performance visual graph summaries for all schools and/or the school of their choice. 
+Users will be provided graph summaries about school performance for all schools and/or the school of their choice. 
