@@ -5,5 +5,7 @@ To run this program, download the latest version of python, save the Final.py an
 
 Final.py will scrape web pages and create a csv file with school information, it will create a web crawler, and it will create the database that will store scraped information. After this database is created, you can then run the visualization.py file to run the interactive program. 
 
+You can also just download all of the files into one directory and run the visualization.py file to begin. 
+
 Instructions will be provided and the user will be prompted to enter information to learn more about how Omaha Public Schools fare 
 through performance scores given by the Nebraska Department of Education. Users will be provided graph summaries about school performance for all schools and/or the school of their choice. 
